@@ -1,0 +1,14 @@
+.navbar-toggler, .btn {
+    border-radius: 0px;
+}
+.navbar-toggler i {
+    padding-left: 5px;
+}
+.card-title {
+    text-transform: uppercase;
+}
+.card {
+    border-radius: 0px; 
+    padding: 40px; 
+    opacity: 0.8;
+}
