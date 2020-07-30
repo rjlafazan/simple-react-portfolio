@@ -2,7 +2,7 @@ import React from "react";
 
 function MediaBar() {
   return (
-    <section className="page-section">
+    <section className="page-section" id="media-bar">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-3">

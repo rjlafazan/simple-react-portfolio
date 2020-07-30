@@ -7,6 +7,9 @@ function Technologies() {
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 className="section-heading text-uppercase">Technologies</h2>
+            <h3 className="section-subheading text-muted">
+              Technologies I have the most experience working with.
+            </h3>
           </div>
         </div>
         <div className="row">
