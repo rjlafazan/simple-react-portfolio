@@ -32,6 +32,16 @@ function Nav() {
               </a>
             </li>
             <li className="nav-item">
+              <a className="nav-link js-scroll-trigger" href="#media-bar">
+                Media
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link js-scroll-trigger" href="#technologies">
+                Technologies
+              </a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="#portfolio">
                 Portfolio
               </a>
