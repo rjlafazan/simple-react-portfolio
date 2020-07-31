@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import $ from 'jquery';
 import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./components/Nav";
@@ -7,60 +8,82 @@ import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import MediaBar from "./components/MediaBar";
-import { v3electric, v3careers, v3dashboard, kojakitchen, trofastpartners, newgrowthliving } from './assets/img';
+import About from "./components/About";
 import Technologies from "./components/Techologies";
+import {
+  v3electric,
+  v3careers,
+  v3dashboard,
+  kojakitchen,
+  trofastpartners,
+  newgrowthliving,
+} from "./assets/img";
+
 
 function App() {
   const portfolioLinks = [
     {
-      href: 'https://v3electric.com/',
+      href: "https://v3electric.com/",
       image: v3electric,
-      title: 'V3 Electric',
-      caption: 'React, Next, Node, Express, PostgreSQL'
+      title: "V3 Electric",
+      caption: "React, Next, Node, Express, PostgreSQL",
     },
     {
-      href: 'https://v3careers.com/',
+      href: "https://v3careers.com/",
       image: v3careers,
-      title: 'V3 Careers',
-      caption: 'React, Next, Node, Express, PostgreSQL'
+      title: "V3 Careers",
+      caption: "React, Next, Node, Express, PostgreSQL",
     },
     {
-      href: 'https://dashboard.v3electric.com/',
+      href: "https://dashboard.v3electric.com/",
       image: v3dashboard,
-      title: 'V3 Dashboard',
-      caption: 'Angular, Sails'
+      title: "V3 Dashboard",
+      caption: "Angular, Sails",
     },
     {
-      href: '/',
+      href: "/",
       image: kojakitchen,
-      title: 'Koja Kitchen',
-      caption: 'Restaurant ordering system for Koja Sac'
+      title: "Koja Kitchen",
+      caption: "Restaurant ordering system for Koja Sac",
     },
     {
-      href: 'https://www.trofastpartners.com/',
+      href: "https://www.trofastpartners.com/",
       image: trofastpartners,
-      title: 'TrofastPartners',
-      caption: 'React, Next, Node, Express, PostgreSQL'
+      title: "TrofastPartners",
+      caption: "React, Next, Node, Express, PostgreSQL",
     },
     {
-      href: 'https://www.newgrowthliving.com/',
+      href: "https://www.newgrowthliving.com/",
       image: newgrowthliving,
-      title: 'NG Living',
-      caption: 'React, Next, Node, Express, PostgreSQL'
-    }
-  ]
+      title: "NG Living",
+      caption: "React, Next, Node, Express, PostgreSQL",
+    },
+  ];
+
+  useEffect(() => {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh')
+    })
+  })
+ 
+
   return (
     <div className="App">
       <Nav />
-      <Masthead 
-        intro1="Ryan Lafazan" 
+      <Masthead
+        intro1="Ryan Lafazan"
         intro2="Software Engineering"
         button="Learn More"
-       />
-       <MediaBar />
-       <Technologies />
-       <Portfolio portfolioLinks={portfolioLinks}>Websites and applications either worked on or built from the ground up by myself and the software teams I have worked on.</Portfolio>
-       <Contact />
+      />
+      <About />
+      <MediaBar />
+      <Technologies />
+      <Portfolio portfolioLinks={portfolioLinks}>
+        Websites and applications either worked on or built from the ground up
+        by myself and the software teams I have worked on.
+      </Portfolio>
+      <Contact />
       <Footer />
     </div>
   );
