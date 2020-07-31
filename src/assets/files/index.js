@@ -1,0 +1,1 @@
+export const resume2020 = require('./RyanLafazan_Tech_Resume_2020.pdf')
