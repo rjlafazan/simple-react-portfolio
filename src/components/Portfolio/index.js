@@ -14,8 +14,8 @@ function Portfolio(props) {
         </div>
         <div className="row">
           {props.portfolioLinks &&
-            props.portfolioLinks.map(({ href, image, title, caption }, index) => (
-              <div className="col-md-4 col-sm-6 portfolio-item">
+            props.portfolioLinks.map(({ href, image, title, caption }, i) => (
+              <div className="col-md-4 col-sm-6 portfolio-item" key={i}>
                 <a
                   className="portfolio-link"
                   data-toggle="modal"
