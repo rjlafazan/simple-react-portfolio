@@ -2,7 +2,7 @@ import React from "react";
 
 function Masthead(props) {
   return (
-    <header className="masthead">
+    <header className="masthead" id="home">
       <div className="container">
         <div className="intro-text">
           <div className="intro-lead-in">{props.intro1}</div>
