@@ -14,12 +14,13 @@ function Technologies() {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <table class="table">
+            <div className="wrapper">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">Platforms</th>
                   <th scope="col">Frontend</th>
-                  <th scope="col"></th>
+                  <th scope="col">Style</th>
                   <th scope="col">Backend</th>
                   <th scope="col">Database</th>
                   <th scope="col">DevOps</th>
@@ -27,7 +28,7 @@ function Technologies() {
               </thead>
               <tbody>
                 <tr>
-                  <td scope="row">OSX</td>
+                  <td>OSX</td>
                   <td>JavaScript</td>
                   <td>CSS</td>
                   <td>Node.js</td>
@@ -35,7 +36,7 @@ function Technologies() {
                   <td>AWS</td>
                 </tr>
                 <tr>
-                  <td scope="row">Browser</td>
+                  <td>Browser</td>
                   <td>React</td>
                   <td>SASS/SCSS</td>
                   <td>Express.js</td>
@@ -43,7 +44,7 @@ function Technologies() {
                   <td>Docker</td>
                 </tr>
                 <tr>
-                  <td scope="row">RHEL, Centos</td>
+                  <td>RHEL, Centos</td>
                   <td>Next.js</td>
                   <td>Bootstrap</td>
                   <td>Sequelize</td>
@@ -51,7 +52,7 @@ function Technologies() {
                   <td>Heroku</td>
                 </tr>
                 <tr>
-                  <td scope="row">Ubuntu</td>
+                  <td>Ubuntu</td>
                   <td>Angular</td>
                   <td>Material UI</td>
                   <td>Mongoose</td>
@@ -60,6 +61,7 @@ function Technologies() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </div>

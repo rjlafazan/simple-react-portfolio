@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import MediaBar from "./components/MediaBar";
 import About from "./components/About";
-import Technologies from "./components/Techologies";
+import Technologies from "./components/Technologies";
 import {
   v3electric,
   v3careers,
