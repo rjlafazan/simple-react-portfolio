@@ -13,3 +13,15 @@
 - optimize and remove redundancies
 - build backend
 
+
+## Docker
+
+### Dev
+`docker-compose build`
+`docker-compose up`
+
+### Production
+- build and test run on the server
+  - `docker-compose -f docker-compose.production.yml up --build`
+- run docker-compose in the background
+  - `docker-compose -f docker-compose.production.yml up -d`
