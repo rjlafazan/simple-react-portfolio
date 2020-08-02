@@ -1,0 +1,55 @@
+version: "3"
+services:
+#   postgres:
+#     image: postgres
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_PASSWORD: password # TODO - Change this and configure production db. At the minimum, make the password decent. You can also use environment variables with AWS for more security.
+#     volumes:
+#       - ./tmp/postgresql/data:/var/lib/postgresql/data
+#     deploy: # Keep if you're deploying with docker swarm
+#       restart_policy:
+#         condition: on-failure
+#         delay: 10s
+#         window: 60s
+#     restart: always
+
+  client:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    command: yarn start
+    ports:
+      - "80:3000" # TODO - Point AWS Load Balancer here.
+    # environment:
+    #   - NODE_ENV=production
+    #   - POSTGRES_DATABASE=postgres
+    #   - POSTGRES_USER=postgres
+    #   - POSTGRES_PASSWORD=password
+    #   - POSTGRES_HOST=postgres
+    # depends_on:
+    #   - postgres
+    # links:
+    #   - postgres
+    # deploy: # Keep if you're deploying with docker swarm
+    #   restart_policy:
+    #     condition: on-failure
+    #     delay: 10s
+    #     window: 60s
+    restart: always
+
+#   pgweb:
+#     image: registry.trustedlife.app/pgweb:latest
+#     environment:
+#       - DATABASE_URL=postgres://postgres:password@postgres:5432/postgres?sslmode=disable
+#       - AUTH_USER=v3admin
+#       - AUTH_PASS=4Y7o5TZPFpjmPYk
+#     depends_on:
+#       - postgres
+#     links:
+#       - postgres
+#     ports:
+#       - "8081:8081"
+#     restart: always

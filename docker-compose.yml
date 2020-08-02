@@ -1,0 +1,48 @@
+version: "3"
+services:
+#   postgres:
+#     image: postgres
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_PASSWORD: password
+#     volumes:
+#       - ./tmp/postgresql/data:/var/lib/postgresql/data
+#     restart: on-failure
+
+  client:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn dev
+    ports:
+      - "3000:3000"
+    # environment:
+    #   - NODE_ENV=development
+    #   - POSTGRES_DATABASE=postgres
+    #   - POSTGRES_USER=postgres
+    #   - POSTGRES_PASSWORD=password
+    #   - POSTGRES_HOST=postgres
+    # depends_on:
+    #   - postgres
+    # links:
+    #   - postgres
+    volumes:
+      - /app/node_modules
+      - .:/app
+    restart: on-failure
+
+#   pgweb:
+#     image: registry.trustedlife.app/pgweb:latest
+#     environment:
+#       - DATABASE_URL=postgres://postgres:password@postgres:5432/postgres?sslmode=disable
+#       - AUTH_USER=admin
+#       - AUTH_PASS=admin
+#     depends_on:
+#       - postgres
+#     links:
+#       - postgres
+#     ports:
+#       - "8081:8081"
+#     restart: on-failure

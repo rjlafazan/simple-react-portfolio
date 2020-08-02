@@ -1,20 +1,21 @@
-# pull official base image
-FROM node:13.12.0-alpine
+# A Dockerfile contains commands to build and run the application
 
-# set working directory
+# use node version 10 from the offical nodejs docker image
+FROM node:alpine
+
+MAINTAINER Ryan Lafazan
+
+# Expose web app port
+EXPOSE 3000
+# Setting working directory. All the path will be relative to WORKDIR
 WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
-
-# add app
-COPY . ./
-
-# start app
-CMD ["npm", "start"]
+# Installing dependencies
+COPY package*.json ./
+# RUN npm install react-scripts -g --silent
+RUN yarn install
+# Copying source files
+COPY . /app
+# Building app
+RUN yarn build 
+# Running the app when the container launches
+CMD [ "yarn", "dev"]
